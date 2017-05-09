@@ -16,7 +16,8 @@ import { ImagesComponent } from './components/images/images.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'images', component: ImagesComponent}
+  {path: 'images', component: ImagesComponent},
+  {path: 'addimage', component: AddimageComponent}
 ];
 
 
