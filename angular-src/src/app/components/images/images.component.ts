@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-images',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
-  constructor() { }
+  // CLASS PROPERTIES
+  images: any;
+
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
+    this.firebaseService.getImages().subscribe( images => {
+      console.log(images);
+      this.images = images;
+    });
   }
 
 }

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +17,23 @@ import { EditimageComponent } from './components/editimage/editimage.component';
 import { ImagesComponent } from './components/images/images.component';
 
 
+import { FirebaseService } from './services/firebase.service';
+
+// FIREBASE CONFIG
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBkyXaFRSUGToD-mB1KFqPJUH5o41-SN04',
+    authDomain: 'imagehost-ae562.firebaseapp.com',
+    databaseURL: 'https://imagehost-ae562.firebaseio.com',
+    projectId: 'imagehost-ae562',
+    storageBucket: 'imagehost-ae562.appspot.com',
+    messagingSenderId: '512285628426'
+  }
+};
+
+
+// NG ROUTER CONFIG
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'images', component: ImagesComponent},
@@ -35,9 +55,14 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    FirebaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
