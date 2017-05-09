@@ -14,7 +14,7 @@ export class FirebaseService {
 
 }
 
-interface Images{
+interface Images {
   $key?: string;
   image?: string;
   owner?: string;
