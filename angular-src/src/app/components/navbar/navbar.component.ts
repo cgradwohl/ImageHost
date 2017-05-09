@@ -18,12 +18,18 @@ export class NavbarComponent implements OnInit {
   }
 
   login() {
+    console.log('BEFORE LOGIN', this.afAuth.auth);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    console.log('AFTER LOGIN', this.afAuth.auth);
+
   }
 
   logout() {
+    console.log('BEFORE LOGOUT', this.afAuth.auth);
     this.afAuth.auth.signOut();
+    console.log('AFTER LOGOUT', this.afAuth.auth);
   }
+
 
   ngOnInit() {
   }

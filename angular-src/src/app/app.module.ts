@@ -25,12 +25,12 @@ import { FirebaseService } from './services/firebase.service';
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBkyXaFRSUGToD-mB1KFqPJUH5o41-SN04',
-    authDomain: 'imagehost-ae562.firebaseapp.com',
-    databaseURL: 'https://imagehost-ae562.firebaseio.com',
-    projectId: 'imagehost-ae562',
-    storageBucket: 'imagehost-ae562.appspot.com',
-    messagingSenderId: '512285628426'
+    apiKey: 'AIzaSyDdMUGMDC_PtgNytNYgFpuooFo_9vQPuJg',
+    authDomain: 'imagehostdb-9f725.firebaseapp.com',
+    databaseURL: 'https://imagehostdb-9f725.firebaseio.com',
+    projectId: 'imagehostdb-9f725',
+    storageBucket: 'imagehostdb-9f725.appspot.com',
+    messagingSenderId: '318473746818'
   }
 };
 
