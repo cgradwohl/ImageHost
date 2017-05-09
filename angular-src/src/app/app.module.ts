@@ -1,3 +1,4 @@
+// MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,7 +18,7 @@ import { AddimageComponent } from './components/addimage/addimage.component';
 import { EditimageComponent } from './components/editimage/editimage.component';
 import { ImagesComponent } from './components/images/images.component';
 
-
+// SERVICES
 import { FirebaseService } from './services/firebase.service';
 
 // FIREBASE CONFIG
