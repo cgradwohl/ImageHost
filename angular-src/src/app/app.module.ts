@@ -22,7 +22,7 @@ import { ImagesComponent } from './components/images/images.component';
 
 // SERVICES
 import { FirebaseService } from './services/firebase.service';
-
+import { GoogleAuthService } from './services/google-auth.service';
 
 // NG ROUTER CONFIG
 const appRoutes: Routes = [
@@ -54,7 +54,8 @@ const appRoutes: Routes = [
     FlashMessagesModule
   ],
   providers: [
-    FirebaseService
+    FirebaseService,
+    GoogleAuthService
   ],
   bootstrap: [AppComponent]
 })
