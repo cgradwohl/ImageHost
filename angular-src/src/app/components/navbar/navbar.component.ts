@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 @Component({
   selector: 'app-navbar',
@@ -15,16 +17,21 @@ export class NavbarComponent implements OnInit {
   // CLASS PROPERTIES
   user: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    public flashMessage: FlashMessagesService
+  ) {
     this.user = afAuth.authState;
   }
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+
   }
 
   logout() {
     this.afAuth.auth.signOut();
+    this.flashMessage.show('You have successfully logged out!', {cssClass: 'alert-success'});
   }
 
 

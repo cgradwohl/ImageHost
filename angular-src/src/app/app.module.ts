@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 // COMPONENTS
@@ -27,7 +28,8 @@ import { FirebaseService } from './services/firebase.service';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'images', component: ImagesComponent},
-  {path: 'addimage', component: AddimageComponent}
+  {path: 'addimage', component: AddimageComponent},
+  {path: 'image/:id', component: ImageComponent}
 ];
 
 
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [
     FirebaseService
