@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../services/firebase.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-image',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  constructor() { }
+  id: any;
+  image: any;
+  imageURL: any;
+
+  constructor(
+    private firebaseService: FirebaseService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
+    // GET IMAGE ID
+    this.id = this.route.snapshot.params['id'];
+
+    this.firebaseService.getImageInfo(this.id).subscribe( image => {
+      this.image = image;
+      console.log(image);
+    });
   }
 
 }
