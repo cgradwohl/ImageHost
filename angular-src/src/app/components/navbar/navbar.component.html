@@ -17,7 +17,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li *ngIf="afAuth.auth.currentUser === null"><a (click)="login()" [routerLink]="['/images']">Login</a></li>
+            <li *ngIf="afAuth.auth.currentUser === null"><a (click)="login()">Login</a></li>
             <li *ngIf="afAuth.auth.currentUser !== null"><a (click)="logout()" [routerLink]="['/']">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
