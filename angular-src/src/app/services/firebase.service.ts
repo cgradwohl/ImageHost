@@ -8,7 +8,7 @@ export class FirebaseService {
   constructor(private db: AngularFireDatabase) { }
 
   getImages() {
-    this.images = this.db.list('/images') as FirebaseListObservable<Images[]>;
+    this.images = this.db.list('/images');
     return this.images;
   }
 

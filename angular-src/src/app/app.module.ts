@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 
 // COMPONENTS
@@ -20,19 +21,6 @@ import { ImagesComponent } from './components/images/images.component';
 
 // SERVICES
 import { FirebaseService } from './services/firebase.service';
-
-// FIREBASE CONFIG
-export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'AIzaSyDdMUGMDC_PtgNytNYgFpuooFo_9vQPuJg',
-    authDomain: 'imagehostdb-9f725.firebaseapp.com',
-    databaseURL: 'https://imagehostdb-9f725.firebaseio.com',
-    projectId: 'imagehostdb-9f725',
-    storageBucket: 'imagehostdb-9f725.appspot.com',
-    messagingSenderId: '318473746818'
-  }
-};
 
 
 // NG ROUTER CONFIG

@@ -10,6 +10,8 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+
   // CLASS PROPERTIES
   user: Observable<firebase.User>;
 
@@ -18,16 +20,11 @@ export class NavbarComponent implements OnInit {
   }
 
   login() {
-    console.log('BEFORE LOGIN', this.afAuth.auth);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    console.log('AFTER LOGIN', this.afAuth.auth);
-
   }
 
   logout() {
-    console.log('BEFORE LOGOUT', this.afAuth.auth);
     this.afAuth.auth.signOut();
-    console.log('AFTER LOGOUT', this.afAuth.auth);
   }
 
 
