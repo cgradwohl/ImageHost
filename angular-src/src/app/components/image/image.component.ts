@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-image',
@@ -26,7 +27,17 @@ export class ImageComponent implements OnInit {
 
     this.firebaseService.getImageInfo(this.id).subscribe( image => {
       this.image = image;
-      console.log(image);
+
+
+      // Strorage Referenece
+      let storageRef = firebase.storage().ref();
+      let spaceRef = storageRef.child(this.image.path);
+
+      storageRef.child(this.image.path).getDownloadURL().then((url) => {
+        this.imageURL = url;
+      }).catch((error) => {
+        console.log(error);
+      });
     });
   }
 

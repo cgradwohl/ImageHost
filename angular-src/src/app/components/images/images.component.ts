@@ -15,7 +15,6 @@ export class ImagesComponent implements OnInit {
 
   ngOnInit() {
     this.firebaseService.getImages().subscribe( images => {
-      console.log(images);
       this.images = images;
     });
   }
