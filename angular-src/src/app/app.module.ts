@@ -29,7 +29,8 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'images', component: ImagesComponent},
   {path: 'addimage', component: AddimageComponent},
-  {path: 'image/:id', component: ImageComponent}
+  {path: 'image/:id', component: ImageComponent},
+  {path: 'editPost/:id', component: EditimageComponent}
 ];
 
 

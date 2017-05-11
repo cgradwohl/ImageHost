@@ -13,20 +13,23 @@ export class FirebaseService {
   // CONSTRUCTOR()
   constructor(
     private db: AngularFireDatabase) {
+    this.images = this.db.list('/images') as FirebaseListObservable<Image[]>;
     this.folder = 'postedImages';
   }
 
 
   // CLASS METHODS
   getImages() {
-    this.images = this.db.list('/images') as FirebaseListObservable<Image[]>;
     return this.images;
   }
+
+
 
   getImageInfo(id) {
     this.image = this.db.object('/images/' + id) as FirebaseObjectObservable<Image>;
     return this.image;
   }
+
 
 
   addImage(image) {
@@ -50,12 +53,24 @@ export class FirebaseService {
     }
   }
 
+
+
+  updateImageInfo(id, image) {
+    return this.images.update(id, image);
+  }
+
+
+
+  deleteImage(id) {
+    return this.images.remove(id);
+  }
+
 }
 
 interface Image {
   $key?: string;
   image?: string;
-  owner?: string;
+  author?: string;
   path?: string;
   title?: string;
 }

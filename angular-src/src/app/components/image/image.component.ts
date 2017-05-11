@@ -41,4 +41,10 @@ export class ImageComponent implements OnInit {
     });
   }
 
+  onDeleteClick() {
+    this.firebaseService.deleteImage(this.id);
+
+    this.router.navigate(['/images']);
+  }
+
 }

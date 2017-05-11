@@ -24,9 +24,10 @@ export class AddimageComponent implements OnInit {
   onAddImageSubmit() {
     let imagePost = {
       title: this.title,
-      owner: this.author
+      author: this.author
     }
 
     this.firebaseService.addImage(imagePost);
+    this.router.navigate(['/images']);
   }
 }
